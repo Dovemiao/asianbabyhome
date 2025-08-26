@@ -1,0 +1,43 @@
+name: Deploy to Cloudflare Pages
+     on:
+       push:
+         branches:
+           - main
+     jobs:
+       build-and-deploy:
+         runs-on: ubuntu-latest
+         timeout-minutes: 15
+         steps:
+           - name: Checkout code
+             uses: actions/checkout@v4
+           - name: Set up PHP
+             uses: shivammathur/setup-php@v2
+             with:
+               php-version: '8.0'
+               ini-values: max_execution_time=600,memory_limit=512M
+           - name: Install WP-CLI
+             run: |
+               curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+               chmod +x wp-cli.phar
+               mv wp-cli.phar /usr/local/bin/wp
+           - name: Install WordPress dependencies
+             run: |
+               composer install --no-dev
+           - name: Set up WordPress
+             run: |
+               wp core download --path=wordpress --skip-content
+               cp -r wp-content wordpress/wp-content
+               wp config create --dbname=test --dbuser=root --dbpass="" --path=wordpress
+           - name: Generate static site
+             run: |
+               wp plugin install simply-static --activate --path=wordpress
+               wp simply-static generate --path=wordpress
+               mv wordpress/wp-content/uploads/simply-static/output public
+           - name: Deploy to Cloudflare Pages
+             uses: cloudflare/pages-action@v1
+             with:
+               apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+               accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+               projectName: asianbabyhomes
+               directory: public
+               gitHubToken: ${{ secrets.GITHUB_TOKEN }}

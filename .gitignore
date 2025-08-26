@@ -1,0 +1,30 @@
+# 忽略 WordPress 核心文件
+wp-admin/
+wp-includes/
+*.php
+wp-config.php
+wp-config-sample.php
+
+# 忽略 wp-content 下的特定子目錄
+wp-content/*
+!wp-content/themes/
+!wp-content/plugins/
+wp-content/uploads/simply-static/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/backups/
+wp-content/debug.log
+
+# 忽略系統文件和臨時文件
+.DS_Store
+*.log
+*.bak
+*.swp
+*.swo
+.htaccess
+.env
+.env.*
+
+# 忽略其他快取文件
+wp-content/cache/*
+wp-content/*cache*/
