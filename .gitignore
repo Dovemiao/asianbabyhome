@@ -2,6 +2,8 @@
 wp-admin/
 wp-includes/
 *.php
+license.txt
+readme.html
 wp-config.php
 wp-config-sample.php
 
