@@ -1,32 +1,35 @@
-# 忽略 WordPress 核心文件
+# WordPress 核心文件
 /wp-admin/
 /wp-includes/
+/index.php
+/wp-*.php
 /license.txt
 /readme.html
-/wp-config-sample.php
 
-# 处理 wp-content 目录
-/wp-content/*
-!/wp-content/themes/
-!/wp-content/plugins/
-/wp-content/uploads/simply-static/
-/wp-content/cache/
-/wp-content/upgrade/
-/wp-content/backups/
-/wp-content/debug.log
+# 配置文件（可选，若包含敏感信息则不跟踪）
+# wp-config.php
 
-# 忽略系统文件和临时文件
-.DS_Store
-*.log
-*.bak
-*.swp
-*.swo
-.env
-.env.*
+# 插件和主题（保留自定义的，排除官方的）
+/wp-content/plugins/
+/wp-content/themes/
+!/wp-content/themes/newscrunch/  # 保留你的主题
+!/wp-content/plugins/simply-static/  # 保留Simply Static插件
 
-# 忽略其他缓存文件
-/wp-content/cache/*
-/wp-content/*cache*/
-
-# 可选：如果需要跟踪上传文件，移除下面这行
+# 上传文件
 /wp-content/uploads/
+
+# 日志和缓存
+*.log
+*.tmp
+.DS_Store
+/wp-content/cache/
+/wp-content/backups/
+
+# 环境配置
+.env
+.env.local
+
+# 编辑器文件
+.idea/
+.vscode/
+*.sublime-*
