@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/main-sitemap.xsl"?>
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="https://asianbabyhomes.pages.dev/main-sitemap.xsl"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
-		<loc>/</loc>
+		<loc>https://asianbabyhomes.pages.dev/</loc>
 	</url>
 	<url>
-		<loc>/privacy-policy-2/</loc>
+		<loc>https://asianbabyhomes.pages.dev/privacy-policy-2/</loc>
 		<lastmod>2025-07-25T08:17:25+00:00</lastmod>
 	</url>
 	<url>
-		<loc>/%e9%9a%b1%e7%a7%81%e6%ac%8a%e6%94%bf%e7%ad%96/</loc>
+		<loc>https://asianbabyhomes.pages.dev/%e9%9a%b1%e7%a7%81%e6%ac%8a%e6%94%bf%e7%ad%96/</loc>
 		<lastmod>2025-07-27T07:09:36+00:00</lastmod>
 	</url>
 	<url>
-		<loc>/sample-page/</loc>
+		<loc>https://asianbabyhomes.pages.dev/sample-page/</loc>
 		<lastmod>2025-08-05T22:36:07+00:00</lastmod>
 	</url>
 </urlset>
